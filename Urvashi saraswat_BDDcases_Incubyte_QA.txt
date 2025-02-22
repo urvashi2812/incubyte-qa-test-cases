@@ -1,0 +1,41 @@
+Feature: Compose and Send Email in Gmail
+
+Scenario 1: Open Compose Window
+Given Gmail is open and user is logged in
+When User clicks on "Compose"
+Then A new email window appears
+
+Scenario 2: Validate 'To' Field
+Given Compose email window is open
+When User enters a valid email address in the "To" field
+Then The email address is accepted
+
+Scenario 3: Validate Subject Field
+Given Compose email window is open
+When User enters "Incubyte" in the subject field
+Then The subject is saved
+
+Scenario 4: Validate Email Body
+Given Compose email window is open
+When User enters "QA test for Incubyte" in the email body
+Then The text is entered correctly
+
+Scenario 5: Send Email Successfully
+Given To, Subject, and Body fields are filled
+When User clicks on "Send"
+Then The email is sent
+
+Scenario 6: Verify Sent Folder
+Given User has sent an email
+When User navigates to "Sent" folder
+Then The sent email appears in the list
+
+Scenario 7: Prevent Sending Without Recipient
+Given Compose email window is open
+When User tries to send without a recipient
+Then An error message appears
+
+Scenario 8: Auto-Save Draft
+Given Email content is typed
+When User closes the window without sending
+Then The email is saved as a draft
